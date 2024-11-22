@@ -5,6 +5,10 @@ import com.rccode.ApplicationLauncher;
 import org.h2.jdbcx.JdbcDataSource;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
@@ -12,6 +16,7 @@ import javax.sql.DataSource;
 @PropertySource("classpath:/application${spring.profiles.active}.properties")
 @ComponentScan(basePackageClasses = ApplicationLauncher.class)
 @EnableWebMvc
+@EnableTransactionManagement
 @Configuration
 public class ApplicationConfiguration {
 
@@ -32,6 +37,11 @@ public class ApplicationConfiguration {
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
+    }
+
+    @Bean
+    public TransactionManager transactionManager(DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
     }
 
 }

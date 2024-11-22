@@ -12,13 +12,15 @@ public class GlobalExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        return ex.getMessage();
+    public String handlemethodArgumentNotValid(MethodArgumentNotValidException exception) { //
+        // TODO you can choose to return your custom object here, which will then get transformed to json/xml etc.
+        return "Sorry, that was not quite right: " + exception.getMessage();
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
     public String handleConstraintViolation(ConstraintViolationException exception) { //
-        return exception.getMessage();
+        // TODO you can choose to return your custom object here, which will then get transformed to json/xml etc.
+        return "Sorry, that was not quite right: " + exception.getMessage();
     }
 }
