@@ -1,37 +1,33 @@
-# Ignore Maven and Gradle directories
+HELP.md
 target/
-build/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Ignore IntelliJ IDEA project files
-.idea/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
-out/
 
-# Ignore Eclipse project files
-*.project
-*.classpath
-*.settings/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Ignore STS (Spring Tool Suite) specific files
-.apt_generated/
-.springBeans/
-
-# Ignore VS Code project files
+### VS Code ###
 .vscode/
-
-# Ignore MacOS system files
-.DS_Store
-
-# Ignore logs
-*.log
-logs/
-
-# Ignore temporary files
-*.swp
-*.swo
-*.tmp
-*.bak
-
-# Ignore OS-gene
