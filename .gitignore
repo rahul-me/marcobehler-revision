@@ -1,0 +1,37 @@
+# Ignore Maven and Gradle directories
+target/
+build/
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Ignore Eclipse project files
+*.project
+*.classpath
+*.settings/
+
+# Ignore STS (Spring Tool Suite) specific files
+.apt_generated/
+.springBeans/
+
+# Ignore VS Code project files
+.vscode/
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Ignore OS-gene
